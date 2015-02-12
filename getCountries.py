@@ -1,15 +1,10 @@
 def getCountries():
-    countryList = []
-    infile = open("countries_list.txt","r")
-    for line in infile:
-        country = line.split()
-        countryList.append(country)
-    return countryList
-
+    with open("countries_list.txt", "r")as f:
+        countries = [line.strip() for line in f]
+    return countries
 
 def main():
     do = getCountries()
     print(do)
-
 
 main()
