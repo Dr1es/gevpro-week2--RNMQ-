@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 
 import sys
+from flag_color import FlagColor
 
 class Country():
     def __init__(self):
         countries = self.getCountries()
+        print((r,g,b))
 
     def getCountries(self):
         with open("countries_list.txt", "r")as f:
