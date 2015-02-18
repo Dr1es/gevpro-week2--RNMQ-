@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+from flag_color import FlagColor
 
 class Country():
     def __init__(self):
