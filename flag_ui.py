@@ -2,6 +2,7 @@
 
 from PyQt4 import QtGui, QtCore
 from flag_color import FlagColor
+import random
 import sys
 
 class FlagUI(QtGui.QWidget):
@@ -24,11 +25,13 @@ class FlagUI(QtGui.QWidget):
         self.setLayout(grid)
 
     def color_picker(self):
-
         flagCol = QtGui.QColor(0, 0, 0)
-        flagCol.setRed(100)
-        flagCol.setGreen(50)
-        flagCol.setBlue(25)
+        color = random.randint(1,255)
+        colour = random.randint(1,255)
+        coulour = random.randint(1,255)
+        flagCol.setRed(color)
+        flagCol.setGreen(colour)
+        flagCol.setBlue(coulour)
 
         self.square = QtGui.QFrame(self)
         self.square.setGeometry(150, 0, 100, 100)

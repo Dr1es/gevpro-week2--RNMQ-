@@ -12,14 +12,6 @@ class FlagColor(QtGui.QColor):
     def color_picker(self):
         self.col = QtGui.QColor(0, 0, 0)
 
-        r = self.col.setRed(range(255))
-        g = self.col.setGreen(range(255))
-        b = self.col.setBlue(range(255))
-
-
-        self.square.setStyleSheet("QFrame { background-color: %s }" % FlagColor.name())
-        return (r,g,b)
-
         self.col.setRed(100)
         self.col.setGreen(50)
         self.col.setBlue(25)
