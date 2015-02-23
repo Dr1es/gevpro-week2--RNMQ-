@@ -6,16 +6,17 @@ import random
 import sys
 
 class FlagUI(QtGui.QWidget):
+    """Constructor"""
     def __init__(self):
         QtGui.QWidget.__init__(self)
         self.get_countries()
         self.color_picker()
 
     def get_countries(self):
+        """Get data from a text file and puts this data in
+            a QComboBox"""
         with open("countries_list.txt", "r")as f:
             countries = [line.strip() for line in f]
-        for word in countries:
-            print("Hello from {}".format(word))
 
         self.countrylist = QtGui.QComboBox()
         self.countrylist.addItems(countries)
@@ -25,6 +26,7 @@ class FlagUI(QtGui.QWidget):
         self.setLayout(grid)
 
     def color_picker(self):
+        """Give a random value to setRed, setGreen and setBlue"""
         flagCol = QtGui.QColor(0, 0, 0)
         color = random.randint(1,255)
         colour = random.randint(1,255)
@@ -33,6 +35,7 @@ class FlagUI(QtGui.QWidget):
         flagCol.setGreen(colour)
         flagCol.setBlue(coulour)
 
+        """Make a QFrame where the colors will be displayed"""
         self.square = QtGui.QFrame(self)
         self.square.setGeometry(150, 0, 100, 100)
         self.square.setStyleSheet("QFrame { background-color: %s }" % flagCol.name())
