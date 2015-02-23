@@ -3,7 +3,7 @@
 import sys
 from flag_color import FlagColor
 
-class Country():
+class Country(FlagColor):
     def __init__(self):
         countries = self.getCountries()
 
@@ -11,6 +11,7 @@ class Country():
         with open("countries_list.txt", "r")as f:
             countries = [line.strip() for line in f]
         for word in countries:
+            self.color_picker()
             print("Hello from {}".format(word))
 
 def main():
