@@ -10,18 +10,16 @@ class FlagColor(QtGui.QColor):
 
 
     def color_picker(self):
-        self.col = QtGui.QColor(0, 0, 0)
-
-        self.col.setRed(100)
-        self.col.setGreen(50)
-        self.col.setBlue(25)
-        
-        self.square.setStyleSheet("QFrame { background-color: %s }" % FlagColor.name())
+        flagCol = QtGui.QColor(0, 0, 0)
+        color = random.randint(1,255)
+        colour = random.randint(1,255)
+        coulour = random.randint(1,255)
+        flagCol.setRed(color)
+        flagCol.setGreen(colour)
+        flagCol.setBlue(coulour)
 
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     flagcolor = FlagColor()
-#   flagcolor.show()
-
     app.exec_()
